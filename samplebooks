@@ -1,0 +1,12 @@
+[
+   {
+      "id":1,
+      "title":"My favorite book",
+      "author":"Jules"
+   },
+   {
+      "id":2,
+      "title":"My other favorite book",
+      "author":"charles"
+   }
+]
