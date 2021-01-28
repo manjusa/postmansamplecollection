@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "My favorite book",
+        "author": "Jules",
+        "region": "america"
+    },
+    {
+        "id": 2,
+        "title": "My other favorite book",
+        "author": "charles",
+        "region": "america"
+    }
+]
