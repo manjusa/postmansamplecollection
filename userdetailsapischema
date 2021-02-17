@@ -1,0 +1,77 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/personal8265/userdetails/1.0.0
+info:
+  version: 1.0.0
+  title: userdetails
+paths:
+  /userdetails:
+    get:
+      summary: gets user details based on searchstring
+      operationId: getUserDetails
+      description: |
+        By passing in the appropriate options, you can search for
+        the user details in the system
+      parameters:
+        - in: query
+          name: searchString
+          description: pass an optional search string for looking up inventory
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: search results matching criteria
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/User'
+        '400':
+          description: bad input parameter
+    post:
+      summary: adds an item to user details
+      operationId: addUserDetails
+      description: Adds userdetails for given userid
+      responses:
+        '201':
+          description: item created
+        '400':
+          description: 'invalid input, object invalid'
+        '409':
+          description: an existing item already exists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+        description: User details to add
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - id
+        - name
+        - age
+        - gender
+        - department
+      properties:
+        id:
+          type: string
+          format: uuid
+          example: d290f1ee-6c54-4b01-90e6-d701748f0851
+        name:
+          type: string
+          example: 'Mahesh'
+        age:
+          type: integer
+          example: 22
+        gender:
+          type: string
+          example: 'male'
+        department:
+          type: string 
+          example: 'IT'
