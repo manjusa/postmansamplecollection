@@ -17,7 +17,7 @@ paths:
       parameters:
         - in: query
           name: searchString
-          description: pass an optional search string for looking up inventory
+          description: pass an optional search string for looking up userdetails
           required: false
           schema:
             type: string
